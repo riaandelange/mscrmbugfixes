@@ -59,5 +59,3 @@ function ExpandEmailDescription() {
 ```
 
 Save and Publish the form changes.
-
-![Image of Email Expanded](https://github.com/riaandelange/mscrmbugfixes/blob/master/images/emailexpanded.PNG)
