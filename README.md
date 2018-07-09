@@ -28,6 +28,8 @@ Modify the file `Microsoft Dynamics CRM\CRMWeb\_forms\controls\controls.css.aspx
     width:1px;
     height:1px;
     overflow:hidden;
-    **display:none;**
+    display:none;
 }
 ```
+
+Save the file and iisreset
