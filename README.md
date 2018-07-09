@@ -17,14 +17,9 @@ Modify the file `Microsoft Dynamics CRM\CRMWeb\_forms\controls\controls.css.aspx
 .ms-crm-div-NotVisible {
     position: absolute;
     <% if (CrmStyles.IsRightToLeft) {
-        %>right: -10000px;
-        <%
-    }
-    else {
-        %>left: -10000px;
-        <%
-    }
-    %>top:auto;
+        %> right: -10000px; <% }
+    else { %>left: -10000px; <% } %>
+    top:auto;
     width:1px;
     height:1px;
     overflow:hidden;
@@ -33,3 +28,6 @@ Modify the file `Microsoft Dynamics CRM\CRMWeb\_forms\controls\controls.css.aspx
 ```
 
 Save the file and iisreset
+
+## 2. Email Editor with  height of 288 pixels
+// todo
