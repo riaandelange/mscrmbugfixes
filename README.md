@@ -11,6 +11,8 @@ For example, we have a field on the **Account** form called `accountnumber` whic
 If the value is *ACC001* and a user double click to select it, copies it, it is copied to the clipboard as 2x values, **ACC001ACC001**
 When we inspect the element with Chrome Developer Tools, we can see that Microsoft is using two fields to show the value, both of which is visible.
 
+![Image of Account](https://raw.githubusercontent.com/riaandelange/mscrmbugfixes/master/images/doubleclickexample.png)
+
 Modify the file `Microsoft Dynamics CRM\CRMWeb\_forms\controls\controls.css.aspx` so that the class `.ms-crm-div-NotVisible` has a display of none value.
 
 ```css
