@@ -33,7 +33,7 @@ Save the file and do an iisreset.
 
 
 ## 2. Email Editor with  height of 288 pixels
-This bug happens when someone is creating or replying to an email activity. The default height for the email editor control is 288px which has been hard-coded by Microsoft developers. There is an element called description_d and it has a data-height of 288 which is then used by the style height of the same element.  
+This bug happens when someone is creating or replying to an email activity. The default height for the email editor control is 288px which has been hard-coded by Microsoft developers. There is an element called description_d and it has a data-height of 288 which is then used by the style height of the same element. You can change the values to whatever you like, i.e. 800.
 
 To fix this, create the following OnLoad and OnSave events on the Email form.
 
