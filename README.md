@@ -27,7 +27,7 @@ Modify the file `Microsoft Dynamics CRM\CRMWeb\_forms\controls\controls.css.aspx
 }
 ```
 
-Save the file and iisreset
+Save the file and do an iisreset
 
 ## 2. Email Editor with  height of 288 pixels
 // todo
