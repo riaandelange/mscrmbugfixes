@@ -13,7 +13,7 @@ When we inspect the element with Chrome Developer Tools, we can see that Microso
 
 ![Image of Account](https://raw.githubusercontent.com/riaandelange/mscrmbugfixes/master/images/doubleclickexample.png)
 
-Modify the file `Microsoft Dynamics CRM\CRMWeb\_forms\controls\controls.css.aspx` so that the class `.ms-crm-div-NotVisible` has a display of none value.
+Modify the file `Microsoft Dynamics CRM\CRMWeb\_forms\controls\controls.css.aspx` so that the class `.ms-crm-div-NotVisible` has a display value of none.
 
 ```css
 .ms-crm-div-NotVisible {
