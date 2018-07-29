@@ -69,6 +69,11 @@ Save and Publish the form changes.
 ## 3. Refused to set unsafe header "Content-Length"
 This bug happens when you open the Developer Tools for Chrome and see red exceptions from the OOB (Out Of *the* Box) `global.ashx?ver=` when a Contact (or any other entity) record is loaded with no customizations been added to the system. 
 
+https://xhr.spec.whatwg.org/#dom-xmlhttprequest-setrequestheader  
+
+XMLHttpRequest isn't allowed to set these headers, they are being set automatically by the browser. The reason is that by manipulating these headers you might be able to trick the server into accepting a second request through the same connection, one that wouldn't go through the usual security checks - that would be a security vulnerability in the browser. - https://stackoverflow.com/questions/7210507/ajax-post-error-refused-to-set-unsafe-header-connection?answertab=votes#tab-top  
+
+
 **Before**
 ![Image of Exception](https://github.com/riaandelange/mscrmbugfixes/raw/master/images/refused%20to%20set%20unsafe%20header%20content-length.PNG)
 
