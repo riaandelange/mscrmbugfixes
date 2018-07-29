@@ -75,7 +75,7 @@ XMLHttpRequest isn't allowed to set these headers, they are being set automatica
 
 
 **Before**
-![Image of Exception](https://github.com/riaandelange/mscrmbugfixes/raw/master/images/refused%20to%20set%20unsafe%20header%20content-length.PNG)
+![Image of Exception](https://github.com/riaandelange/mscrmbugfixes/raw/master/images/refused%20to%20set%20unsafe%20header%20content-lengthNEW.PNG)
 
 To fix this, edit the file `Microsoft Dynamics CRM\CRMWeb\_static\_common\scripts\Global.js` with VS Code  
 You can Reindent Lines / Pretify the file for easier reading...  
@@ -92,10 +92,12 @@ Save the file
 Ctrl + F5 to hard refresh the page in your browser  
 
 **After**
-![Image of Exception](https://github.com/riaandelange/mscrmbugfixes/raw/master/images/refused%20to%20set%20unsafe%20header%20content-length%20after.PNG)  
+![Image of Exception](https://github.com/riaandelange/mscrmbugfixes/raw/master/images/refused%20to%20set%20unsafe%20header%20content-length%20afterNEW.PNG)  
 
 ## 4. Max Session Monitor Console Log (Microsoft Dynamics 365 v8.2.2.112)
 This *annoying* console log information was probably left by on the MS developers... it is of no relevance to me and there is no documentation for it either.  
+
+![Image of MaxSessionMonitor](https://github.com/riaandelange/mscrmbugfixes/raw/master/images/MaxSessionMonitorNEW.PNG)  
 
 To remove it, edit the file `Microsoft Dynamics CRM\CRMWeb\_static\_common\scripts\MaxSessionMonitor.js` with VS Code   
 Search for the following 3 lines (line 394, 483, 489)
