@@ -4,13 +4,13 @@ Microsoft Dynamics CRM/365 Bug Fixes for On-Premise Deployments
 The following bugs were discovered using mostly Chrome browser. The changes are not supported although they are actual bug fixes which makes the system work, so use it with care. Remember to re-implement them as soon as you've done an upgrade to a newer version.
 The bugs have been confirmed by various people I work with on a daily basis and is applicable to all CRM on-premise installations.
 
-## 1. Double Click Copy Paste bug
 - Microsoft Dynamics 2016 v8.1.0.359
 - Microsoft Dynamics 2016 v8.1.1.1005
 - Microsoft Dynamics 365 v8.2.0.749
 - Microsoft Dynamics 365 v8.2.1.176
-- Microsoft Dynamics 365 v8.2.2.112
+- Microsoft Dynamics 365 v8.2.2.112  
 
+## 1. Double Click Copy Paste bug
 This bug happens when a user double click to selects a readonly field on a Form, presses Ctrl+C and Ctrl+V in another/same application.
 This bug however does not happen when you slowly select from left to right or right to left, which nobody uses anyway.
 For example, we have a field on the **Account** form called `accountnumber` which has been changed to read-only.
@@ -92,4 +92,32 @@ Save the file
 Ctrl + F5 to hard refresh the page in your browser  
 
 **After**
-![Image of Exception](https://github.com/riaandelange/mscrmbugfixes/raw/master/images/refused%20to%20set%20unsafe%20header%20content-length%20after.PNG)
+![Image of Exception](https://github.com/riaandelange/mscrmbugfixes/raw/master/images/refused%20to%20set%20unsafe%20header%20content-length%20after.PNG)  
+
+## 4. Max Session Monitor Console Log (Microsoft Dynamics 365 v8.2.2.112)
+This *annoying* console log information was probably left by on the MS developers... it is of no relevance to me and there is no documentation for it either.  
+
+To remove it, edit the file `Microsoft Dynamics CRM\CRMWeb\_static\_common\scripts\MaxSessionMonitor.js` with VS Code   
+Search for the following 3 lines (line 394, 483, 489)
+
+``` JavaScript
+console.info("Session closed due to timeout on ",Date.now());
+
+console.info("Max Session timeout settings updated from iframe: ",window.location.href)
+
+console.info("Max Session timeout started and monitoring page: ",window.location.href)
+```
+Comment these three lines out (line 394, 483, 489)
+``` JavaScript
+// console.info("Session closed due to timeout on ",Date.now());
+
+// console.info("Max Session timeout settings updated from iframe: ",window.location.href)
+
+// console.info("Max Session timeout started and monitoring page: ",window.location.href)
+```
+
+Save the file  
+Ctrl + F5 to hard refresh the page in your browser  
+
+
+`eof`
