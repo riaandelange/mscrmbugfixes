@@ -4,7 +4,13 @@ Microsoft Dynamics CRM/365 Bug Fixes for On-Premise Deployments
 The following bugs were discovered using mostly Chrome browser. The changes are not supported although they are actual bug fixes which makes the system work, so use it with care. Remember to re-implement them as soon as you've done an upgrade to a newer version.
 The bugs have been confirmed by various people I work with on a daily basis and is applicable to all CRM on-premise installations.
 
-## 1. Double Click Copy Paste bug (Microsoft Dynamics 365 v8.2.1.176)
+## 1. Double Click Copy Paste bug
+- Microsoft Dynamics 2016 v8.1.0.359
+- Microsoft Dynamics 2016 v8.1.1.1005
+- Microsoft Dynamics 365 v8.2.0.749
+- Microsoft Dynamics 365 v8.2.1.176
+- Microsoft Dynamics 365 v8.2.2.112
+
 This bug happens when a user double click to selects a readonly field on a Form, presses Ctrl+C and Ctrl+V in another/same application.
 This bug however does not happen when you slowly select from left to right or right to left, which nobody uses anyway.
 For example, we have a field on the **Account** form called `accountnumber` which has been changed to read-only.
