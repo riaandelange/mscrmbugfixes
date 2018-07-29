@@ -65,3 +65,26 @@ function ExpandEmailDescription() {
 ```
 
 Save and Publish the form changes.
+
+## 3. Refused to set unsafe header "Content-Length"
+This bug happens when you open the Developer Tools for Chrome and see red exceptions from the OOB (Out Of *the* Box) `global.ashx?ver=` when a Contact (or any other entity) record is loaded with no customizations been added to the system. 
+
+**Before**
+![Image of Exception](https://github.com/riaandelange/mscrmbugfixes/raw/master/images/refused%20to%20set%20unsafe%20header%20content-length.PNG)
+
+To fix this, edit the file `Microsoft Dynamics CRM\CRMWeb\_static\_common\scripts\Global.js` with VS Code  
+You can Reindent Lines / Pretify the file for easier reading...  
+Search for 
+``` JavaScript
+oXmlHttp.setRequestHeader("Content-Length", sXmlDocument.length);
+```
+Comment this line out  
+``` JavaScript
+// oXmlHttp.setRequestHeader("Content-Length", sXmlDocument.length);
+```
+Minify the file (optional)  
+Save the file  
+Ctrl + F5 to hard refresh the page in your browser  
+
+**After**
+![Image of Exception](https://github.com/riaandelange/mscrmbugfixes/raw/master/images/refused%20to%20set%20unsafe%20header%20content-length%20after.PNG)
