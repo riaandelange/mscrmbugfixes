@@ -126,6 +126,8 @@ This bug happens when you click on a Sub Grid + to add a record on a related ent
 The first time the Quick Create form opens, but as soon as you try to add another one, it only shows the Save and Close buttons.  
 The height of the css class mscrm-globalqc-iframe is set to 0px hence it's not showing in your browser.  
 
+![Quick Create Bug](https://github.com/riaandelange/mscrmbugfixes/raw/master/images/8360.quickcreate.png)
+
 To fix it, add the following to a Form OnLoad event for the Quick Create Form.
 
 ``` JavaScript
