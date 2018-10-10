@@ -121,5 +121,23 @@ Comment these three lines out (line 394, 483, 489)
 Save the file  
 Ctrl + F5 to hard refresh the page in your browser  
 
+## 4. Chrome Quick Create Form not showing
+This bug happens when you click on a Sub Grid + to add a record on a related entity to open the Quick Create in Google Chrome.  
+The first time the Quick Create form opens, but as soon as you try to add another one, it only shows the Save and Close buttons.  
+The height of the css class mscrm-globalqc-iframe is set to 0px hence it's not showing in your browser.  
+
+To fix it, add the following to a Form OnLoad event for the Quick Create Form.
+
+``` JavaScript
+function chromeQuickCreateFix() {
+    var isChrome = !!window.chrome && !!window.chrome.webstore;
+    if (isChrome) {
+        if (window.top.document.getElementsByClassName("mscrm-globalqc-iframe")[0].style.height == "0px") {
+            console.log("Resizing mscrm-globalqc-iframe iframe for Chrome Bug");
+            window.top.document.getElementsByClassName("mscrm-globalqc-iframe")[0].style.height = "200px";
+        }
+    }
+}
+```
 
 `eof`
