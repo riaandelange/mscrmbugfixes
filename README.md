@@ -129,12 +129,12 @@ This bug happens when you click on a Sub Grid + to add a record on a related ent
 To fix it, add the following to a Form OnLoad event for the Quick Create Form.
 
 ``` JavaScript
-function chromeQuickCreateFix() {
+function chromeQuickCreateFix(heightpx) {
     var isChrome = !!window.chrome && !!window.chrome.webstore;
     if (isChrome) {
         if (window.top.document.getElementsByClassName("mscrm-globalqc-iframe")[0].style.height == "0px") {
             console.log("Resizing mscrm-globalqc-iframe iframe for Chrome Bug");
-            window.top.document.getElementsByClassName("mscrm-globalqc-iframe")[0].style.height = "200px";
+            window.top.document.getElementsByClassName("mscrm-globalqc-iframe")[0].style.height = heightpx;
         }
     }
 }
